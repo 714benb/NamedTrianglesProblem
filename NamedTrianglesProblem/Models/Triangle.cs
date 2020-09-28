@@ -20,8 +20,8 @@ namespace NamedTrianglesProblem.Models
     /// </returns>
     public string CalculateName()
     {
-      if (this is InvalidTriangle)
-        return ((InvalidTriangle) this).Message;
+      if (this is InvalidTriangle triangle)
+        return triangle.Message;
 
       var vertices = new List<Vertex>()
       {
