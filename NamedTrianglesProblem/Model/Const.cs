@@ -11,5 +11,7 @@ namespace NamedTrianglesProblem.Model
     public const int ZERO_BASE_ADJUST = 1;
     public const int NAMES_PER_SQUARE = 2;
     public const int WIDTH_IN_PIXELS = 10;
+    public static readonly char[] AlphaMatrix = { 'A', 'B', 'C', 'D', 'E', 'F' };
+
   }
 }

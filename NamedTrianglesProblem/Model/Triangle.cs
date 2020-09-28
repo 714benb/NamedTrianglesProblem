@@ -7,7 +7,6 @@ namespace NamedTrianglesProblem.Models
 {
   public class Triangle
   {
-    public readonly char[] AlphaMatrix = {'A', 'B', 'C', 'D', 'E', 'F'};
     public Vertex Vertex1 { get; set; }
     public Vertex Vertex2 { get; set; }
     public Vertex Vertex3 { get; set; }
@@ -112,7 +111,7 @@ namespace NamedTrianglesProblem.Models
     private char CalculateAlphaComponent(Vertex upperLeftVertex)
     {
       var alphaIndex = upperLeftVertex.Y / Const.WIDTH_IN_PIXELS;
-      return AlphaMatrix[alphaIndex];
+      return Const.AlphaMatrix[alphaIndex];
     }
 
     private Vertex FindUpperLeftVertex(List<Vertex> vertexList)
