@@ -1,4 +1,4 @@
-namespace NamedTrianglesProblem.Model
+namespace NamedTrianglesProblem.Models
 {
   //NOTE: depending on the actual requirements these could be moved
   //      to a configuration file to allow for
