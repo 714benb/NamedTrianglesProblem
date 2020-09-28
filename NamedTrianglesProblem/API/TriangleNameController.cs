@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NamedTrianglesProblem.Exceptions;
 using NamedTrianglesProblem.Models;
+using Serilog;
 
 namespace NamedTrianglesProblem.API
 {
@@ -16,12 +17,13 @@ namespace NamedTrianglesProblem.API
       try
       {
         var triangle = TriangleFactory.Create(v1, v2, v3);
-
         return new JsonResult(triangle.CalculateName());
       }
       catch (Exception e)
       {
-        throw new NamedTriangleException("Unanticipated exception was thrown contact your administrator", e);
+        var msg = $"Unanticipated exception, \"{e.Message}\". \nContact your administrator";
+        Log.Error(e, msg);
+        throw new NamedTriangleException(msg, e);
       }
     }
   }
