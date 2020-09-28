@@ -4,9 +4,9 @@ using NamedTrianglesProblem.Models;
 
 namespace NamedTrianglesProblem.Models
 {
-  public static class TriangleFactory
+  public class TriangleFactory
   {
-    public static Triangle Create(Vertex v1, Vertex v2, Vertex v3)
+    public Triangle Create(Vertex v1, Vertex v2, Vertex v3)
     {
       var vertices = new List<Vertex>() {v1, v2, v3};
       if (CheckForNulls(vertices, out var verticesAreNulls)) return verticesAreNulls;

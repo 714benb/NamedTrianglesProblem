@@ -17,7 +17,7 @@ namespace NamedTrianglesProblem.API
     {
       try
       {
-        var triangle = TriangleFactory.Create(v1, v2, v3);
+        var triangle = new TriangleFactory().Create(v1, v2, v3);
         return new JsonResult(triangle.CalculateName());
       }
       catch (Exception e)

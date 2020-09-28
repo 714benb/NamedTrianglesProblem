@@ -47,7 +47,7 @@ namespace NamedTrianglesProblem.Models.Tests
       //Arrange
 
       //Act
-      var actual = TriangleFactory.Create(v1, v2, v3);
+      var actual = new TriangleFactory().Create(v1, v2, v3);
       //Assert
       Assert.IsInstanceOf<InvalidTriangle>(actual);
       var invalidTraiangle = actual as InvalidTriangle;
@@ -77,7 +77,7 @@ namespace NamedTrianglesProblem.Models.Tests
       //Arrange
 
       //Act
-      var actual = TriangleFactory.Create(v1, v2, v3);
+      var actual = new TriangleFactory().Create(v1, v2, v3);
       //Assert
       Assert.IsInstanceOf<Triangle>(actual);
       Assert.IsNotInstanceOf<InvalidTriangle>(actual);
@@ -143,7 +143,7 @@ namespace NamedTrianglesProblem.Models.Tests
     public void CalculateName_Should_Return_Correct_Name_Tests(Vertex v1, Vertex v2, Vertex v3, string expected)
     {
       //Arrange
-      var triangle = TriangleFactory.Create(v1, v2, v3);
+      var triangle = new TriangleFactory().Create(v1, v2, v3);
       //Act
       var actual = triangle.CalculateName();
       //Assert
@@ -154,42 +154,42 @@ namespace NamedTrianglesProblem.Models.Tests
     public void CalculateName_Should_Return_Correct_Name_RegardlessOfOrder_Tests(Vertex v1, Vertex v2, Vertex v3, string expected)
     {
       //Arrange
-      var triangle = TriangleFactory.Create(v1, v2, v3);
+      var triangle = new TriangleFactory().Create(v1, v2, v3);
       //Act
       var actual = triangle.CalculateName();
       //Assert
       Assert.That(actual.Contains(expected), "v1, v2, v3");
 
       //Arrange
-      triangle = TriangleFactory.Create(v1, v3, v2);
+      triangle = new TriangleFactory().Create(v1, v3, v2);
       //Act
       actual = triangle.CalculateName();
       //Assert
       Assert.That(actual.Contains(expected), "v1, v3, v2");
 
       //Arrange
-      triangle = TriangleFactory.Create(v2, v3, v1);
+      triangle = new TriangleFactory().Create(v2, v3, v1);
       //Act
       actual = triangle.CalculateName();
       //Assert
       Assert.That(actual.Contains(expected), "v2, v3, v1");
 
       //Arrange
-      triangle = TriangleFactory.Create(v2, v1, v3);
+      triangle = new TriangleFactory().Create(v2, v1, v3);
       //Act
       actual = triangle.CalculateName();
       //Assert
       Assert.That(actual.Contains(expected), "v2, v1, v3");
 
       //Arrange
-      triangle = TriangleFactory.Create(v3, v2, v1);
+      triangle = new TriangleFactory().Create(v3, v2, v1);
       //Act
       actual = triangle.CalculateName();
       //Assert
       Assert.That(actual.Contains(expected), "v3, v2, v1");
 
       //Arrange
-      triangle = TriangleFactory.Create(v3, v1, v2);
+      triangle = new TriangleFactory().Create(v3, v1, v2);
       //Act
       actual = triangle.CalculateName();
       //Assert
