@@ -18,7 +18,7 @@ namespace NamedTrianglesProblem.Models
     /// <returns>
     /// The name of the triangle or a message indicating why the name could not be returned.
     /// </returns>
-    public string CalculateName()
+    public virtual string CalculateName()
     {
       if (this is InvalidTriangle triangle)
         return triangle.Message;
@@ -96,7 +96,7 @@ namespace NamedTrianglesProblem.Models
       return false == otherVertices.Any(v => v.X == x10 && v.Y == y10);
     }
 
-    private int CalculateNumericComponent(Vertex upperLeftVertex, Vertex[] otherVertices)
+    protected virtual int CalculateNumericComponent(Vertex upperLeftVertex, Vertex[] otherVertices)
     {
       var numericComponent = upperLeftVertex.X / Const.WIDTH_IN_PIXELS * Const.NAMES_PER_SQUARE + Const.ZERO_BASE_ADJUST;
       if (otherVertices[0].Y != otherVertices[1].Y)
@@ -107,13 +107,13 @@ namespace NamedTrianglesProblem.Models
       return numericComponent;
     }
 
-    private char CalculateAlphaComponent(Vertex upperLeftVertex)
+    protected virtual char CalculateAlphaComponent(Vertex upperLeftVertex)
     {
       var alphaIndex = upperLeftVertex.Y / Const.WIDTH_IN_PIXELS;
       return Const.AlphaMatrix[alphaIndex];
     }
 
-    private Vertex FindUpperLeftVertex(List<Vertex> vertexList)
+    protected virtual Vertex FindUpperLeftVertex(List<Vertex> vertexList)
     {
       /*
          Upper is defined by the lowest Y.  There are either one or two 
