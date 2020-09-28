@@ -6,7 +6,7 @@ namespace NamedTrianglesProblem.Models
 {
   public class TriangleFactory : ITriangleFactory
   {
-    public Triangle Create(Vertex v1, Vertex v2, Vertex v3)
+    public ITriangle Create(Vertex v1, Vertex v2, Vertex v3)
     {
       var vertices = new List<Vertex>() {v1, v2, v3};
       if (CheckForNulls(vertices, out var verticesAreNulls)) return verticesAreNulls;

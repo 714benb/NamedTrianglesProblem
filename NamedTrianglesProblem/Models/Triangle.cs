@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace NamedTrianglesProblem.Models
 {
-  public class Triangle
+  public class Triangle : ITriangle
   {
     public Vertex Vertex1 { get; set; }
     public Vertex Vertex2 { get; set; }
