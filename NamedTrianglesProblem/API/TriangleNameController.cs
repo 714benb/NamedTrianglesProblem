@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NamedTrianglesProblem.Exceptions;
 using NamedTrianglesProblem.Models;
@@ -23,7 +24,7 @@ namespace NamedTrianglesProblem.API
       {
         var msg = $"Unanticipated exception, \"{e.Message}\". \nContact your administrator";
         Log.Error(e, msg);
-        throw new NamedTriangleException(msg, e);
+        return StatusCode(StatusCodes.Status500InternalServerError, msg);
       }
     }
   }
