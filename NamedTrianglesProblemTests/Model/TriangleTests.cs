@@ -84,7 +84,7 @@ namespace NamedTrianglesProblem.Models.Tests
     }
 
 
-    private static object[] GoodVertexWithNamesCases =
+    private static object[] VertexWithNamesCases =
     {
       //upper left most 10x10 square
       new object[] {new Vertex() {X = 0, Y = 0}, new Vertex() {X = 10, Y = 0}, new Vertex() {X = 0, Y = 10},  "has no name"},
@@ -139,7 +139,7 @@ namespace NamedTrianglesProblem.Models.Tests
       new object[] {new Vertex() {X = 10, Y = -10}, new Vertex() {X = 0, Y = 0}, new Vertex() {X = 10, Y = 10 }, "min pixel size"},
       new object[] {new Vertex() {X = -10, Y = 0}, new Vertex() {X = 0, Y = 0}, new Vertex() {X = 10, Y = 10 }, "min pixel size"},
     };
-    [Test, TestCaseSource("GoodVertexWithNamesCases")]
+    [Test, TestCaseSource("VertexWithNamesCases")]
     public void CalculateName_Should_Return_Correct_Name_Tests(Vertex v1, Vertex v2, Vertex v3, string expected)
     {
       //Arrange
@@ -150,7 +150,7 @@ namespace NamedTrianglesProblem.Models.Tests
       Assert.That(actual, Does.Contain(expected));
     }
 
-    [Test, TestCaseSource("GoodVertexWithNamesCases")]
+    [Test, TestCaseSource("VertexWithNamesCases")]
     public void CalculateName_Should_Return_Correct_Name_RegardlessOfOrder_Tests(Vertex v1, Vertex v2, Vertex v3, string expected)
     {
       //Arrange
