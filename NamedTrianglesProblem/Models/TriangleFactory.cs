@@ -4,7 +4,7 @@ using NamedTrianglesProblem.Models;
 
 namespace NamedTrianglesProblem.Models
 {
-  public class TriangleFactory
+  public class TriangleFactory : ITriangleFactory
   {
     public Triangle Create(Vertex v1, Vertex v2, Vertex v3)
     {
