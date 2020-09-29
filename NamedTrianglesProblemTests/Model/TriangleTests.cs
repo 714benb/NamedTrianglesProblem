@@ -151,6 +151,17 @@ namespace NamedTrianglesProblem.Models.Tests
     }
 
     [Test, TestCaseSource("VertexWithNamesCases")]
+    public void DiscriminatingTriangleFactory_CalculateName_Should_Return_Correct_Name_Tests(Vertex v1, Vertex v2, Vertex v3, string expected)
+    {
+      //Arrange
+      var triangle = new DiscriminatingTriangleFactory().Create(v1, v2, v3);
+      //Act
+      var actual = triangle.CalculateName();
+      //Assert
+      Assert.That(actual, Does.Contain(expected));
+    }
+
+    [Test, TestCaseSource("VertexWithNamesCases")]
     public void CalculateName_Should_Return_Correct_Name_RegardlessOfOrder_Tests(Vertex v1, Vertex v2, Vertex v3, string expected)
     {
       //Arrange
