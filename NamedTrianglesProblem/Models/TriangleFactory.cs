@@ -79,7 +79,7 @@ namespace NamedTrianglesProblem.Models
             Vertex2 = vertices[1],
             Vertex3 = vertices[2],
             Message =
-              $"Invalid Triangle, vertices do all fall on {Const.WIDTH_IN_PIXELS} px boundaries: v1=v1={vertices[0]}, v2={vertices[1]}, v3={vertices[2]}"
+              $"Invalid Triangle, vertices do all fall on {Const.WIDTH_IN_PIXELS} px boundaries: v1={vertices[0]}, v2={vertices[1]}, v3={vertices[2]}"
           };
           return true;
         }
